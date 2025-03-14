@@ -2,6 +2,7 @@ name: Main
 on:
   push:
     tags:
+      - '**'
 jobs:
   all:
     runs-on: ubuntu-24.04
