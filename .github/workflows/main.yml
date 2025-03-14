@@ -1,5 +1,7 @@
 name: Main
-on: [push,workflow_dispatch,workflow_call]
+on:
+  push:
+    tags:
 jobs:
   all:
     runs-on: ubuntu-24.04
@@ -17,7 +19,7 @@ jobs:
         with:
           distribution: goreleaser
           version: '~> v2'
-          args: release --verbose --snapshot --draft --clean
+          args: release --clean
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
